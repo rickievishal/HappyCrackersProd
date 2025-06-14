@@ -49,7 +49,7 @@ const upload = multer({ storage: storage });
 app.post('/upload-image', upload.single('image'), (req, res) => {
   if (!req.file) return res.status(400).json({ msg: 'No file uploaded' });
 
-  const imageUrl = `http://localhost:${port}/uploads/${req.file.filename}`;
+  const imageUrl = `https://happycrackersprod.onrender.com/uploads/${req.file.filename}`;
 
   res.status(200).json({ imageUrl });
 });
